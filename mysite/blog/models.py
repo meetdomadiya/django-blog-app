@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class Post(models.Model):
     #we have all attributes ready and also have an option to create post and publish it later.
-    author = models.ForeignKey('auth.User') #foreign Key
+    author = models.ForeignKey('auth.User',on_delete=models.CASCADE) #foreign Key
     title = models.CharField(max_length = 200)
     text = models.TextField()
     create_date = models.DateTimeField(default=timezone.now())
@@ -25,7 +25,7 @@ class Post(models.Model):
         return self.title
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.Post', related_name = 'comments')
+    post = models.ForeignKey('blog.Post', related_name = 'comments',on_delete=models.CASCADE)
     author = models.CharField(max_length = 200) #author of comment is different from post author
     text = models.TextField()
     create_date = models.DateTimeField(default = timezone.now())
