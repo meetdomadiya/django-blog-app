@@ -24,5 +24,6 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path(r'',include('blog.urls')),
     path(r'accounts/login/$',auth_views.LoginView.as_view(template_name="Registration/login.html"),name='login'),
-    path(r'accounts/logout/$',auth_views.LogoutView.as_view(),name = 'logout', kwargs = {'next_page' : '/'}),
+    path(r'accounts/logout/$',auth_views.LogoutView.as_view(template_name="post_list.html"), name = 'logout', #kwargs = {'next_page' : '/'}
+         ),
 ]
