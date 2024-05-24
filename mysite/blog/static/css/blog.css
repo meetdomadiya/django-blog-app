@@ -18,8 +18,7 @@
 
 .posttitle{
     font-family: 'Russo One',sans-serif;
-    font-size: 3em;
-    text-align: center; 
+    font-size: 3em; 
 }
 
 .postcontent{
@@ -31,3 +30,4 @@
     position:absolute;
     right:0px;
 }
+
